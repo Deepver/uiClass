@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Registration Form with Progress Bar</h2>
+
+
+    <!-- Progress Bar -->
+    <progress id="progressBar" value="0" max="100"></progress>
+    <p>Progress: <span id="progressValue">0%</span></p>
+
+
+    <form id="registrationForm">
+        Full Name: <input type="text" name="fullname" placeholder="Enter your full name" required><br><br>
+        Email: <input type="email" name="email" placeholder="Enter your email" required><br><br>
+        Password: <input type="password" name="password" placeholder="Enter your password" required><br><br>
+        Date of Birth: <input type="date" name="dob" required><br><br>
+        Gender:
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female<br><br>
+        <input type="checkbox" name="terms" required> I agree to the terms and conditions<br><br>
+        <input type="button" value="Click">
+    </form>
+
+
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const progressBar = document.getElementById('progressBar');
+        const progressValue = document.getElementById('progressValue');
+
+        // Total number of required fields in the form
+        const totalFields = form.querySelectorAll('[required]').length;
+
+        // Event listener to check input change
+        form.addEventListener('input', updateProgress);
+
+        function updateProgress() {
+            let filledFields = 0;
+
+            // Check each required field and see if it has a value
+            form.querySelectorAll('[required]').forEach(input => {
+                if (input.type === 'radio') {
+                    if (form.querySelector(`input[name=${input.name}]:checked`)) {
+                        filledFields++;
+                    }
+                } else if (input.type === 'checkbox') {
+                    if (input.checked) {
+                        filledFields++;
+                    }
+                } else {
+                    if (input.value.trim() !== '') {
+                        filledFields++;
+                    }
+                }
+            });
+
+            // Calculate progress as a percentage
+            const progress = (filledFields / totalFields) * 100;
+
+            // Update the progress bar and the text
+            progressBar.value = progress;
+            progressValue.textContent = `${Math.round(progress)}%`;
+        }
+    </script>
+
+</body>
+
+</html>
