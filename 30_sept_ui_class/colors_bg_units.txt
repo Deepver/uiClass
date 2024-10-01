@@ -1,0 +1,13 @@
+background-image : url('path')
+but if the image size is not fit to the screen size, image may
+repeat , to control, we can use 
+
+background-repeat : repeat / repeat-x / repeat-y / no-repeat 
+background-size : auto / contain / cover
+background-position : we can keep position of background in different 
+places such as linear gradient or radial gradient 
+background : linear-gradient(to right, red, blue);
+background : radial-gradient(red,blue) -- comes in circle 
+
+
+

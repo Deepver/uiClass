@@ -1,0 +1,80 @@
+#box {
+    background-color: thistle;
+    height: 100px;
+    width: 100px;
+    padding: 30px 30px;
+    box-sizing: border-box;
+
+
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+
+}
+
+#word {
+    text-decoration: line-through wavy red 1px;
+    color: blue;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-shadow: 2px 1rem navajowhite;
+    text-overflow: initial;
+    text-indent: 1px;
+}
+
+/* box-sizing :border-box;
+when we use this 
+omitt the effect of padding */
+
+
+/* there are so many units
+
+
+
+we can define our website multiple units like
+
+px - pixel (it is a smallest unit)
+      don't in div
+
+vh/vw - visible width or visible height
+
+em - enumerated value 
+it always takes x times of parents font size 
+
+rem - root enumerated value 
+      by default 16px
+
+      1rem = 16px
+
+% - you can also share unit as %.
+
+
+ */
+
+
+
+
+
+/* there are many fonts in the fonts library 
+ 
+ serif 
+
+
+ sans-serif 
+
+
+ monospace 
+
+
+ cursive
+
+
+ fanatsy 
+
+
+ 
+ */
